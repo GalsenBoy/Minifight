@@ -1,10 +1,10 @@
 class Personnage {
-    constructor(pseudo, role, sante, attaque, niveau = 1) {
+    constructor(pseudo, role, sante, attaque) {
         this.pseudo = pseudo;
         this.role = role;
         this.sante = sante;
         this.attaque = attaque;
-        this.niveau = niveau;
+        this.niveau = 1;
     }
 
     evoluer() {
@@ -14,7 +14,7 @@ class Personnage {
 
     verifierSante() {
         if (this.sante <= 0) {
-            this.sante = 0;
+            this.sante == 0;
             console.log(`${this.pseudo} a perdu`)
         }
     }
@@ -25,7 +25,7 @@ class Personnage {
 }
 
 class Magicien extends Personnage {
-    constructor(pseudo, role, sante, attaque) {
+    constructor(pseudo) {
         super(pseudo, 'magicien', 170, 90)
     }
 
@@ -40,14 +40,14 @@ class Magicien extends Personnage {
     coupSpecial(personnage) {
         personnage.sante -= this.attaque * 5;
         console.log(`affiche ${this.pseudo} attaque avec son coup spécial puissance des arcanes ${personnage.pseudo} ${this.attaque * 5} dégâts)".`);
-        personnage.evoluer();
+        this.evoluer();
         personnage.verifierSante();
     }
 
 }
 
 class Guerrier extends Personnage {
-    constructor(pseudo, role, sante, attaque) {
+    constructor(pseudo) {
         super(pseudo, 'guerrier', 350, 50)
     }
 
@@ -62,7 +62,7 @@ class Guerrier extends Personnage {
     coupSpecial(personnage) {
         personnage.sante -= this.attaque * 5;
         console.log(`affiche ${this.pseudo} attaque avec son coup spécial puissance des arcanes ${personnage.pseudo} ${this.attaque * 5} dégâts)".`);
-        personnage.evoluer();
+        this.evoluer();
         personnage.verifierSante();
     }
 }
