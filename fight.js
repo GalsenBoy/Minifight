@@ -39,7 +39,7 @@ class Magicien extends Personnage {
 
     coupSpecial(personnage) {
         personnage.sante -= this.attaque * 5;
-        console.log(`affiche ${this.pseudo} attaque avec son coup spécial puissance des arcanes ${personnage.pseudo} ${this.attaque * 5} dégâts)".`);
+        console.log(`${this.pseudo} attaque avec son coup spécial puissance des arcanes ${personnage.pseudo} ${this.attaque * 5} dégâts".`);
         this.evoluer();
         personnage.verifierSante();
     }
